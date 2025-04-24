@@ -11,7 +11,7 @@ export const useMessageStore = defineStore('messageStore', () => {
 
     const loadMessages = async () => {
 		try {
-			const response = await fetch('/example.json')
+			const response = await fetch(`${import.meta.env.BASE_URL}/example.json`)
 			const json = await response.json()
 
 			messages.value = json.data.comments.map(msg => ({
